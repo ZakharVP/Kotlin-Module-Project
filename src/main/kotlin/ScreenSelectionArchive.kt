@@ -16,13 +16,16 @@ class ScreenSelectionArchive() {
                 if (archive is Archive) println("$index. ${archive.name}")
                 else println(archive)
             }
-            println("Введите цифру для выбора действия из меню")
+            println("Введите цифру для выбора действия из меню или просмотра содержимого архива")
             val enterString  = Scanner(System.`in`).nextLine()
             try {
                 val enterInt = enterString.toInt()
                 if (listArchive.size > enterInt) {
                     when(enterInt){
-                        1 -> return
+                        1 -> {
+                            listArchive.clear()
+                            return
+                        }
                         0 -> {val archive = ScreenCreateArchive().create(listArchive)
                             listArchive.add(archive)}
                         else -> {
@@ -35,7 +38,7 @@ class ScreenSelectionArchive() {
                                         if (note is Note) println("$index. ${note.title}")
                                         else println(note)
                                     }
-                                    println("Введите цифру для выбора действия из меню")
+                                    println("Введите цифру для выбора действия из меню или просмотра содержимого записки")
                                     val enterStringNote  = Scanner(System.`in`).nextLine()
                                     try {
                                         val enterIntNote = enterStringNote.toInt()
