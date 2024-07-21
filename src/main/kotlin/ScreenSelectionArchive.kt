@@ -43,11 +43,7 @@ class ScreenSelectionArchive() {
                                         when (enterIntNote){
                                             1 -> choiseNote = false
                                             0 -> {val note = ScreenCreateNote().create(arc.notes)
-                                               arc.notes.add(note)}
-//                                            0 -> {
-//                                                val note = ScreenCreateAll<Note>()
-//                                                arc.notes.add(note.create())
-//                                            }
+                                               arc.notes.add(note)}//
                                             else -> {
                                                 val bodyNote = arc.notes[enterIntNote]
                                                 if(bodyNote is Note){
